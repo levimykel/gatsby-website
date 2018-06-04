@@ -5,7 +5,6 @@ import {Link as PrismicLink, RichText} from 'prismic-reactjs';
 import PrismicConfig from '../../prismic-config';
 
 // Components
-import Link from 'gatsby-link';
 import MainContent from '../components/MainContent';
 
 class Page extends React.Component {
