@@ -32,10 +32,16 @@ class IndexPage extends React.Component {
     }
   }
  
-  componentDidUpdate() {
-    // Launch the prismic.io toolbar
-    const apiEndpoint = this.state.prismicEndpoint;
-    window.PrismicToolbar.setup(apiEndpoint);
+  componentDidMount() {
+    this.refreshToolbar();
+  }
+ 
+  // Launch the prismic.io toolbar
+  refreshToolbar() {
+    if (window.PrismicToolbar) {
+      window.PrismicToolbar.setup(this.state.prismicEndpoint);
+      window.PrismicToolbar.setupEditButton();
+    }
   }
   
   render() {
