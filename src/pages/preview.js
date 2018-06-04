@@ -14,7 +14,7 @@ export default class Preview extends React.Component {
     Prismic.api(apiEndpoint).then(api => {
       api.previewSession(params.token, PrismicConfig.linkResolver, '/').then((url) => {
         Cookies.set(Prismic.previewCookie, params.token, { expires: PREVIEW_EXPIRES });
-        this.props.history.push(url);
+        window.location.replace(url);
       });
     });
   }

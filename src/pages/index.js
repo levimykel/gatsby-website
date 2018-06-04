@@ -36,6 +36,10 @@ class IndexPage extends React.Component {
     this.refreshToolbar();
   }
  
+  componentDidUpdate() {
+    this.refreshToolbar();
+  }
+ 
   // Launch the prismic.io toolbar
   refreshToolbar() {
     if (window.PrismicToolbar) {
