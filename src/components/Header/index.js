@@ -6,6 +6,7 @@ import PrismicConfig from '../../../prismic-config';
 
 // Components
 import Link from 'gatsby-link';
+import VariableLink from '../VariableLink';
 
 class Header extends React.Component {
   state = {
@@ -36,7 +37,7 @@ class Header extends React.Component {
     
     // Get the navigation links
     const navLinks = menu.data.menu_links.map(function(item, index){
-      return <li key={index}><Link to={PrismicLink.url(item.link, PrismicConfig.linkResolver)}>{RichText.asText(item.label)}</Link></li>;
+      return <li key={index}><VariableLink link={item.link} label={item.label}/></li>;
     });
     
     return (

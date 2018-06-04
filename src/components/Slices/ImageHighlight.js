@@ -1,7 +1,9 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import {Link as PrismicLink, RichText, Date} from 'prismic-reactjs';
 import PrismicConfig from '../../../prismic-config';
+
+// Components
+import VariableLink from '../VariableLink';
 
 export const ImageHighlight = (props) => {
   
@@ -10,7 +12,7 @@ export const ImageHighlight = (props) => {
   const linkLabel = RichText.asText(props.slice.primary.link_label)
   const link =
     highlightLink && linkLabel != " " ?
-    <p><Link to={highlightLink}>{linkLabel}</Link></p> :
+    <p><VariableLink link={props.slice.primary.link} label={props.slice.primary.link_label}/></p> :
     null;
   
   return (

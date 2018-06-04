@@ -1,7 +1,9 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import {Link as PrismicLink, RichText, Date} from 'prismic-reactjs';
 import PrismicConfig from '../../../prismic-config';
+
+// Components
+import VariableLink from '../VariableLink';
 
 export const ImageGallery = (props) => {
   
@@ -13,7 +15,7 @@ export const ImageGallery = (props) => {
     const linkLabel = RichText.asText(galleryItem.link_label);
     const link = 
       galleryLink && linkLabel != " " ?
-      <p className="gallery-link"><Link to={galleryLink}>{linkLabel}</Link></p> :
+      <p className="gallery-link"><VariableLink link={galleryItem.link} label={galleryItem.link_label}/></p> :
       null;
 
     return (
