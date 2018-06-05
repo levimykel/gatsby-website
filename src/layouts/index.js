@@ -17,7 +17,7 @@ const TemplateWrapper = ({ data, children }) => (
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Myke Gable is a musician living in Olympia, WA with over 30 years of experience performing acoustic guitar-oriented music at clubs, restaurants, hotels, and private parties.' }
+        { name: 'description', content: 'Example Gatsby Website with Prismic' }
       ]}
     >
       <link rel="icon" type="image/png" href={favicon}/>
