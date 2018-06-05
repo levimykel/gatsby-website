@@ -33,19 +33,11 @@ class IndexPage extends React.Component {
   }
  
   componentDidMount() {
-    this.refreshToolbar();
+    PrismicConfig.refreshToolbar();
   }
  
   componentDidUpdate() {
-    this.refreshToolbar();
-  }
- 
-  // Launch the prismic.io toolbar
-  refreshToolbar() {
-    if (window.PrismicToolbar) {
-      window.PrismicToolbar.setup(this.state.prismicEndpoint);
-      window.PrismicToolbar.setupEditButton();
-    }
+    PrismicConfig.refreshToolbar();
   }
   
   render() {
